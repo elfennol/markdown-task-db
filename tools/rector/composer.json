@@ -1,0 +1,8 @@
+{
+  "require": {
+    "php": ">=8.4"
+  },
+  "require-dev": {
+    "rector/rector": "^2.0"
+  }
+}
