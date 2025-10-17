@@ -4,7 +4,13 @@ KISS approach to manage tasks and track your time in markdown.
 
 ## Description
 
-The command `bin/console markdown-task-db markdown_directory` takes the markdown files in the directory `markdown_directory`, extracts some data from these files and inserts these data in DB (SQLite). You can then make your own stats just with SQL queries.
+The following command
+
+```sh
+bin/console markdown-task-db markdown_directory
+```
+
+takes the markdown files in the directory `markdown_directory`, extracts some data from these files and inserts these data in DB (SQLite). You can then make your own stats just with SQL queries.
 
 - Sample queries: [tests/MarkdownTaskDbTest.php](tests/MarkdownTaskDbTest.php).
 - DB schema: [src/Service/SchemaBuilder.php](src/Service/SchemaBuilder.php).
@@ -13,6 +19,24 @@ The command `bin/console markdown-task-db markdown_directory` takes the markdown
 Each of these markdown files must have a specific structure.
 
 - Example: [tests/fixtures/project.md](tests/fixtures/project.md).
+
+### With Docker
+
+If you do not have the correct PHP version, you can use Docker. For example, create a directory `mtd` in `var/` and put your markdown files here.
+
+Install the project before:
+
+```sh
+docker container run --rm -v $(pwd):/app/ -u $(id -u ${USER}):$(id -g ${USER}) composer install
+
+```
+
+Then you can execute the command:
+
+```sh
+docker container run --rm -v $(pwd):/app/  -u $(id -u ${USER}):$(id -g ${USER}) php:8.4-cli /app/bin/console markdown-task-db /app/var/mtd/
+
+```
 
 ## Rules
 
