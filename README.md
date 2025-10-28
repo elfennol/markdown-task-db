@@ -1,6 +1,6 @@
 # MarkdownTaskDb
 
-KISS approach to manage tasks and track your time in markdown.
+KISS approach to manage tasks and track your time in markdown. POC in PHP (final version in Rust?).
 
 ## Description
 
@@ -59,3 +59,9 @@ docker container run --rm -v $(pwd):/app/  -u $(id -u ${USER}):$(id -g ${USER}) 
 - Install QA tools: `make qa-vendor-install`.
 - Must succeed (`make qa`): phpcs, phpunit, rector.
 - Optional (just an indicator to improve the code): phpstan.
+
+## TODO
+
+- Write a more robust version in Rust.
+- Check with extension `*.mtd.md` in `FileFinder` ?
+- In `MarkdownTaskDbTest.php`, round with 1 (not 0).
