@@ -1,3 +1,5 @@
+⚠️ NOT MAINTAINED
+
 # MarkdownTaskDb
 
 KISS approach to manage tasks and track your time in markdown. POC in PHP (final version in Rust?).
